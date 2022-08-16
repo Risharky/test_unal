@@ -84,10 +84,11 @@ fig = go.Figure([
     ])
 fig.update_layout(
     yaxis_title='No. Matriculados',
-    title='Matriculados facultad de Odontología',
+    title=('Matriculados facultad de '+select_facultad.title()),
     hovermode="x"
 )
 
+st.plotly_chart(fig)
 
 #sidebar
 st.sidebar.markdown("Desarrollado para fines academicos, no use los datos generados para realizar transacciones")
