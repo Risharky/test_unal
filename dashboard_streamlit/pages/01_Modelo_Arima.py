@@ -54,7 +54,7 @@ st.sidebar.markdown("Desarrollado para fines academicos, no use los datos genera
 st.sidebar.write(f'''
     <a target="_blank" href="https://risharky.github.io">
         <button>
-            Retornar a GH pages
+            Retornar a GH pages de Ricardo Rodriguez Otero
         </button>
     </a>
     ''',
