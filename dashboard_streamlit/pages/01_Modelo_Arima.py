@@ -61,6 +61,32 @@ model = model.fit(periodo_variable, date_col='Fecha_c', value_col='Matriculados'
 prediction = model.predict()
 forecast = prediction.forecast
 st.write(print(model))
+st.write(print(forecast))
+
+fig = go.Figure([
+    go.Scatter(
+        name='F.Odontología, pregrado mujeres P.1',
+        x=periodo_variable['Fecha_c'],
+        y=periodo_variable['Matriculados'],
+        mode='lines+markers',
+        marker=dict(color='red', size=2),
+        showlegend=True
+    ),
+    go.Scatter(
+        name='Pronostico: F.Odontología, pregrado mujeres P.2',
+        x=forecast.index,
+        y=forecast['Matriculados'],
+        mode='lines+markers',
+        marker=dict(color='violet', size=2),
+        line=dict(width=2),
+        showlegend=True
+    )
+    ])
+fig.update_layout(
+    yaxis_title='No. Matriculados',
+    title='Matriculados facultad de Odontología',
+    hovermode="x"
+)
 
 
 #sidebar
