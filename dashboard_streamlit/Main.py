@@ -67,8 +67,8 @@ st.sidebar.markdown(" &copy; 2022 &copy;")
 with intro:
      st.title("EDA o Analisis exploratorio de datos")
      #carga de datos
-     #df= pd.read_excel('Matriculados pba.xlsx')
-     df=pd.read_csv('Matriculadospba.csv')
+     df= pd.read_excel('dashboard_streamlit/Matriculados pba.xlsx')
+     #df=pd.read_csv('Matriculadospba.csv')
      df['Facultad']=df['Facultad'].replace(['C.  Humanas', 'Ingenieria', 'Odontologia'],['C. Humanas', 'Ingeniería', 'Odontología'])
      df_t = df.convert_dtypes()
      df_t[['Año','Semestre_A']]=df_t['Periodo'].str.split('-', expand=True)
