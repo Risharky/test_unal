@@ -20,7 +20,6 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objs as go
 from autots import AutoTS #permite crear series de tiempo usando librerias segundarias
-st.set_option('deprecation.showPyplotGlobalUse', False)
 st.title(":chart_with_upwards_trend: Series de tiempo U.Nal AutoTS Modelo Arima")
 
 
