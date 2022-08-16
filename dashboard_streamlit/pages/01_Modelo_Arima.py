@@ -60,12 +60,12 @@ model = AutoTS(forecast_length=2, frequency='infer', prediction_interval=0.80,
 model = model.fit(periodo_variable, date_col='Fecha_c', value_col='Matriculados', id_col=None)
 prediction = model.predict()
 forecast = prediction.forecast
-st.write(print(model))
-st.write(print(forecast))
+st.write(model)
+st.write(forecast)
 
 fig = go.Figure([
     go.Scatter(
-        name=(select_facultad.title()+ grado_variable.title()+' ' + select_sexo.title()+' P.'+ select_periodo.title()),
+        name=(select_facultad.title()+ select_periodo.title()+' ' + select_sexo.title()+' P.'+ select_periodo.title()),
         x=periodo_variable['Fecha_c'],
         y=periodo_variable['Matriculados'],
         mode='lines+markers',
