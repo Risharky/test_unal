@@ -65,7 +65,7 @@ st.write(print(forecast))
 
 fig = go.Figure([
     go.Scatter(
-        name='F.Odontología, pregrado mujeres P.1',
+        name=(select_facultad.title()+ grado_variable.title()+' ' + select_sexo.title()+' P.'+ select_periodo.title()),
         x=periodo_variable['Fecha_c'],
         y=periodo_variable['Matriculados'],
         mode='lines+markers',
