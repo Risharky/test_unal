@@ -1,0 +1,6 @@
+plotly
+plotly_express
+matplotlib
+pandas
+autots
+statsmodels
