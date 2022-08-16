@@ -47,6 +47,17 @@ select_grado = st.selectbox('Seleccione un grado: ', options=pd.unique(facultad_
 grado_serie = facultad_serie.loc[facultad_serie['Grado'] == select_grado]
 select_periodo = st.selectbox('Seleccione un periodo: ', options=pd.unique(grado_serie['Semestre_A']))
 periodo_serie = facultad_serie.loc[grado_serie['Semestre_A'] == select_periodo]
+st.write(periodo_serie.head())
+
+#model_list = ['LastValueNaive', 'GLS', 'GLM', 'ETS', 'AverageValueNaive', 'ARIMA', 'Theta', 'ARDL']
+model_list = ['ARIMA']
+model = AutoTS(forecast_length=2, frequency='infer', prediction_interval=0.80,
+                ensemble='simple', model_list=model_list, transformer_list='fast',
+                max_generations=3, num_validations=0)
+model = model.fit(periodo_serie, date_col='Fecha_c', value_col='Matriculados', id_col=None)
+prediction = model.predict()
+forecast = prediction.forecast
+st.write(print(model))
 
 
 #sidebar
