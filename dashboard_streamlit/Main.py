@@ -34,7 +34,7 @@ EDA_unal=st.container()
 #introducción
 with intro:
      st.title("EDA")
-     st.markdown("Dada la coyuntura mundial por causa de la inflación que a su vez es causada por diversos cuellos de botella generados por la pandemia y la geopolítica actual, se vio que el Dólar tuvo un fortalecimiento que no se esperaba en diversas partes del mundo incluyendo a Colombia, en este caso solo se crearán modelos de series de tiempo usando el paquete AutoTS y Statsmodels de Python.")
+     st.markdown("Se realiza un análisis de datos en relación a lo solicitado en el punto2 lo cual se encuentra en esta página, en la página ‘Modelo Arima’,  se crearán modelos de series de tiempo usando el paquete AutoTS y Statsmodels de Python.")
      st.markdown(" Para más información [modelos](https://www.statsmodels.org/devel/examples/)")
 
 
