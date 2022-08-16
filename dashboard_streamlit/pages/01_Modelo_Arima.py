@@ -47,10 +47,9 @@ facultad_variable = sexo_variable.loc[sexo_variable['Facultad'] == select_facult
 facultad_variable.reset_index(inplace=True)
 select_grado = st.selectbox('Seleccione un grado: ', options=pd.unique(facultad_variable['Grado']))
 grado_variable = facultad_variable.loc[facultad_variable['Grado'] == select_grado]
-grado_variable.reset_index(inplace=True)
 select_periodo = st.selectbox('Seleccione un periodo: ', options=pd.unique(grado_variable['Semestre_A']))
 periodo_variable = grado_variable.loc[grado_variable['Semestre_A'] == select_periodo]
-periodo_variable.reset_index(inplace=True)
+
 st.write(periodo_variable.head())
 
 #model_list = ['LastValueNaive', 'GLS', 'GLM', 'ETS', 'AverageValueNaive', 'ARIMA', 'Theta', 'ARDL']
