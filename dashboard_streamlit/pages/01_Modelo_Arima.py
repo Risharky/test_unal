@@ -40,25 +40,25 @@ df_t["Matriculados"] = df_t["Matriculados"].astype('int')
 df_t["Año"] = df_t["Año"].astype('int')
 
 select_sexo = st.selectbox('Seleccione un sexo: ', options=pd.unique(df_t['Sexo']))
-sexo_serie = df_t.loc[df_t['Sexo'] == select_sexo]
-sexo_serie.reset_index(inplace=True)
-select_facultad = st.selectbox('Seleccione una facultad: ', options=pd.unique(sexo_serie['Facultad']))
-facultad_serie = sexo_serie.loc[sexo_serie['Facultad'] == select_facultad]
-facultad_serie.reset_index(inplace=True)
-select_grado = st.selectbox('Seleccione un grado: ', options=pd.unique(facultad_serie['Grado']))
-grado_serie = facultad_serie.loc[facultad_serie['Grado'] == select_grado]
-grado_serie.reset_index(inplace=True)
-select_periodo = st.selectbox('Seleccione un periodo: ', options=pd.unique(grado_serie['Semestre_A']))
-periodo_serie = facultad_serie.loc[grado_serie.['Semestre_A'] == select_periodo]
-periodo_serie.reset_index(inplace=True)
-st.write(periodo_serie.head())
+sexo_variable = df_t.loc[df_t['Sexo'] == select_sexo]
+sexo_variable.reset_index(inplace=True)
+select_facultad = st.selectbox('Seleccione una facultad: ', options=pd.unique(sexo_variable['Facultad']))
+facultad_variable = sexo_variable.loc[sexo_variable['Facultad'] == select_facultad]
+facultad_variable.reset_index(inplace=True)
+select_grado = st.selectbox('Seleccione un grado: ', options=pd.unique(facultad_variable['Grado']))
+grado_variable = facultad_variable.loc[facultad_variable['Grado'] == select_grado]
+grado_variable.reset_index(inplace=True)
+select_periodo = st.selectbox('Seleccione un periodo: ', options=pd.unique(grado_variable['Semestre_A']))
+periodo_variable = grado_variable.loc[grado_variable['Semestre_A'] == select_periodo]
+periodo_variable.reset_index(inplace=True)
+st.write(periodo_variable.head())
 
 #model_list = ['LastValueNaive', 'GLS', 'GLM', 'ETS', 'AverageValueNaive', 'ARIMA', 'Theta', 'ARDL']
 model_list = ['ARIMA']
 model = AutoTS(forecast_length=2, frequency='infer', prediction_interval=0.80,
                 ensemble='simple', model_list=model_list, transformer_list='fast',
                 max_generations=3, num_validations=0)
-model = model.fit(periodo_serie, date_col='Fecha_c', value_col='Matriculados', id_col=None)
+model = model.fit(periodo_variable, date_col='Fecha_c', value_col='Matriculados', id_col=None)
 prediction = model.predict()
 forecast = prediction.forecast
 st.write(print(model))
