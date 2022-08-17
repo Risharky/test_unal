@@ -67,7 +67,7 @@ st.write(forecast)
 
 fig = go.Figure([
     go.Scatter(
-        name=('F.'select_facultad.title()+' Periodo ' +select_periodo.title()+' ' + select_sexo.title()+' P.'+ select_periodo.title()),
+        name=('F.'+select_facultad.title()+' Periodo ' +select_periodo.title()+' ' + select_sexo.title()+' P.'+ select_periodo.title()),
         x=periodo_variable['Fecha_c'],
         y=periodo_variable['Matriculados'],
         mode='lines+markers',
