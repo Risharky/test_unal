@@ -93,7 +93,7 @@ fig.update_layout(
 st.plotly_chart(fig)
 
 #sidebar
-st.sidebar.markdown("Desarrollado para fines academicos, no use los datos generados para realizar transacciones")
+st.sidebar.markdown("Desarrollado para fines laborales, se eliminara el dia 31 de agosto o antes en caso de ser requerido")
 st.sidebar.write(f'''
     <a target="_blank" href="https://risharky.github.io">
         <button>
