@@ -75,7 +75,7 @@ fig = go.Figure([
         showlegend=True
     ),
     go.Scatter(
-        name=('Pronostico: F.'select_facultad.title()+' Periodo ' +select_periodo.title()+' ' + select_sexo.title()+' P.'+ select_periodo.title()),
+        name=('Pronostico: F.'+select_facultad.title()+' Periodo ' +select_periodo.title()+' ' + select_sexo.title()+' P.'+ select_periodo.title()),
         x=forecast.index,
         y=forecast['Matriculados'],
         mode='lines+markers',
